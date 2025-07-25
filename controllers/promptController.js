@@ -2,7 +2,7 @@ import Prompt from '../models/Prompt.js'
 
 export const getAllPrompts = async (req, res) => {
   try {
-    const prompts = await Prompt.find().sort({ created_at: -1 }).lean()
+    const prompts = await Prompt.find().sort({ created_at: -1 })
     res.status(200).json(prompts)
   } catch (error) {
     res.status(500).json({ error: 'Server error', details: error.message })
@@ -11,7 +11,7 @@ export const getAllPrompts = async (req, res) => {
 
 export const getPromptById = async (req, res) => {
   try {
-    const prompt = await Prompt.findById(req.params.id).lean()
+    const prompt = await Prompt.findById(req.params.id)
     if (!prompt) return res.status(404).json({ error: 'Prompt not found' })
     res.json(prompt)
   } catch (error) {
