@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1a2b3c4d",
+    "title": "Summarize News Article",
+    "content": "Summarize the following article in 3 bullet points. Focus on key facts and implications.",
+    "tags": ["summarization", "news", "NLP"],
+    "status": "active",
+    "created_at": "2025-07-22T10:15:00.000Z"
+  },
+  {
+    "id": "2b3c4d5e",
+    "title": "Product Review Analyzer",
+    "content": "Analyze this product review and return the sentiment (positive, negative, neutral) and list 3 key pros and cons.",
+    "tags": ["analysis", "ecommerce", "sentiment"],
+    "status": "inactive",
+    "created_at": "2025-07-20T14:05:00.000Z"
+  },
+  {
+    "id": "3c4d5e6f",
+    "title": "Polite Rewriter",
+    "content": "Rewrite the following sentence to sound more polite and professional, keeping the original meaning.",
+    "tags": ["writing", "tone", "chatbot"],
+    "status": "active",
+    "created_at": "2025-07-21T08:30:00.000Z"
+  },
+  {
+    "id": "4d5e6f7g",
+    "title": "JSON to Table",
+    "content": "Convert the following JSON data into a clean HTML table with headers and rows.",
+    "tags": ["formatting", "html", "developer"],
+    "status": "active",
+    "created_at": "2025-07-19T12:00:00.000Z"
+  },
+  {
+    "id": "5e6f7g8h",
+    "title": "Content Moderator",
+    "content": "Check this message for offensive or inappropriate content. Return 'safe' or 'flagged' with a reason.",
+    "tags": ["moderation", "safety", "chatbot"],
+    "status": "inactive",
+    "created_at": "2025-07-18T17:20:00.000Z"
+  },
+  {
+    "id": "6f7g8h9i",
+    "title": "Translate & Formalize",
+    "content": "Translate the following informal Spanish message into English and rephrase it in a formal tone.",
+    "tags": ["translation", "professional", "bilingual"],
+    "status": "active",
+    "created_at": "2025-07-23T09:45:00.000Z"
+  }
+]
