@@ -1,15 +1,23 @@
-const express = require('express');
-const cors = require('cors');
-const promptRoutes = require('./routes/prompts');
+import express from 'express'
+import cors from 'cors'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+import promptRoutes from './routes/prompts.js'
 
-const app = express();
-const PORT = 3001;
+dotenv.config()
+const app = express()
+const PORT = process.env.PORT || 3001
 
-app.use(cors());
-app.use(express.json());
+app.use(cors())
+app.use(express.json())
 
-app.use('/prompts', promptRoutes);
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    dbName: 'promptdb',
+  })
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error('MongoDB error:', err))
 
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
-});
+app.use('/prompts', promptRoutes)
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))

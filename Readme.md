@@ -1,12 +1,13 @@
 ## Backend – Prompt Manager API
 
-This is a simple RESTful API built with **Node.js + Express** for managing AI prompts.
+This is a simple RESTful API built with **Node.js + Express** and connected to **MongoBD** for managing AI prompts.
 
 ### Tech Stack
 
 - Node.js
-- Express
-- JSON file as local storage (`data.json`)
+- Express.js
+- MongoDB (via Mongoose)
+- dotenv
 
 ---
 
@@ -22,7 +23,10 @@ This is a simple RESTful API built with **Node.js + Express** for managing AI pr
     ```bash
    npm install
 
-3. Start the server
+3. Create a .env file with MongoDB URI
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority
+
+4. Start the server
     
     ```bash
    node server.js
@@ -73,16 +77,14 @@ Updates the content or status of a prompt
 | 500    | `Internal Server Error` | File read/write error or crash     |
 
 
-## File Storage
-Prompts are stored in a local file: backend/data.json
-
-Each prompt has the following structure:
+## Data structure
+Each prompt stored in database has the following structure:
 
 {
-  "id": "uuid-or-string",
+  "_id": "ObjectId",
   "title": "Prompt title",
   "content": "Prompt full text",
   "tags": ["chatbot", "AI"],
-  "status": "active",
+  "status": "active" | "inactive",
   "created_at": "2025-07-23T16:00:00Z"
 }
